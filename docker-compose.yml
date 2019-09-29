@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   db_backup:
-      image: arizalsaputro/mongo-gce-backup
+      image: arizalsaputro/mongo-gcs-backup
       environment:
         - MONGODB_HOST=yourmongodbhost
         - MONGODB_PORT=yourmongodbport

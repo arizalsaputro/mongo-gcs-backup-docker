@@ -1,11 +1,11 @@
-# mongodb-gcs-backup-docker [![Docker Build Status](https://travis-ci.org/arizalsaputro/mongo-gcs-backup-docker.svg?branch=master)](https://hub.docker.com/r/arizalsaputro/mongo-gce-backup)
+# mongodb-gcs-backup-docker [![Docker Build Status](https://travis-ci.org/arizalsaputro/mongo-gcs-backup-docker.svg?branch=master)](https://hub.docker.com/r/arizalsaputro/mongo-gcs-backup)
 
 This project aims to provide a simple way to perform a MongoDB server/db backup using `mongo-tools` and to upload it to Google Cloud Storage. It was greatly inspired from [`https://github.com/birotaio/mongodb-gcs-backup`](https://github.com/birotaio/mongodb-gcs-backup).
 
 
 ## Usage
 
-You can find the built image on [Docker Hub](https://hub.docker.com/r/arizalsaputro/mongo-gce-backup). Then, set following environment variable when running the docker container:
+You can find the built image on [Docker Hub](https://hub.docker.com/r/arizalsaputro/mongo-gcs-backup). Then, set following environment variable when running the docker container:
 
 | Environment Variable | Required | Default | Description |
 | --- | --- | --- | --- |
@@ -34,7 +34,7 @@ version: '3.1'
 
 services:
   db_backup:
-      image: arizalsaputro/mongo-gce-backup
+      image: arizalsaputro/mongo-gcs-backup
       environment:
         - MONGODB_HOST=yourmongodbhost
         - MONGODB_PORT=yourmongodbport
