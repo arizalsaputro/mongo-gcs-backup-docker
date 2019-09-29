@@ -36,14 +36,18 @@ services:
   db_backup:
       image: arizalsaputro/mongo-gce-backup
       environment:
-        - MONGODB_HOST=mongo2
-        - MONGODB_PORT=27017
-        - CRON_EXPRESSION=0 0 * * *
-        - GCS_KEY_FILE_PATH=/mongodb-gcs-backup/service-account.json
-        - GCS_BUCKET=gs://name-of-backup-buckey
+        - MONGODB_HOST=yourmongodbhost
+        - MONGODB_PORT=yourmongodbport
+        - MONGODB_DB=yourmongodbdatabase
+        - CRON_EXPRESSION=59 23 * * *
+        - GCS_KEY_FILE_PATH=/your-path-of/service-account.json
+        - GCS_BUCKET=gs://yourname-of-bucket
+        - SLACK_ALERTS=true
+        - SLACK_WEBHOOK_URL=https://your-slack-webhook-url
+        - SLACK_CHANNEL=#yourchannelorusername
       secrets:
-        - googlestorage
+        - service_account
 secrets:
-  googlestorage:
-    external: true       
+  service_account:
+    file: service_account.json      
 ```
