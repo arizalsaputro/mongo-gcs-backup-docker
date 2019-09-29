@@ -12,7 +12,7 @@ fi
 
 # support docker-compose secret
 if [ -f /run/secrets/service_account ]; then
-	eval "cp /run/secrets/googlestorage $GCS_KEY_FILE_PATH"
+	eval "cp /run/secrets/service_account $GCS_KEY_FILE_PATH"
 fi
 
 /usr/sbin/crond -f
